@@ -1,0 +1,143 @@
+html,body {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom:3px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-family: monospace;
+  font-size: 35px;
+  color: #00F900;
+}
+div.content {
+  padding: 10px;
+  border: 2px solid #000;
+  margin: 0 auto;
+  display: block;
+  width: 60vw;
+}
+h2 {
+  text-align: left;
+  font-family: monospace;
+  padding: 0;
+  font-size: 30px;
+  color: #000000;
+}
+h3 {
+  text-align: left;
+  font-family: monospace;
+  font-size: 28px;
+  padding: 0;
+  color: #000000;
+}
+h4 {
+  text-align: left;
+  font-family: monospace;
+  font-size: 26px;
+  padding: 0;
+  color: #000000;
+}
+p {
+  text-align: left;
+  font-family: monospace;
+  font-size: 25px;
+  padding: 0;
+  color: #000000;
+}
+a {
+  text-align: left;
+  font-family: monospace;
+  font-size: 25px;
+  color: #000000;
+  text-decoration: underline;
+}
+a:hover {
+  color: #808080;
+}
+ul {
+  list-style: disc;
+}
+li {
+  text-align: left;
+  font-family: monospace;
+  font-size: 25px;
+  padding: 10px;
+  color: #000000;
+}
+hr {
+  width: 100%;
+  border: none;
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+}
+p.footer {
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  padding: 0;
+  color: #000000;
+}
+p.subtitle {
+  font-style: italic;
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+div.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  margin: 0;
+  background-color: #FFF;
+  border-top: 2px solid #000;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  position: fixed;
+}
+@media screen and (max-width: 800px){
+  h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  div.content {
+    width: 80vw;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 22px;
+  }
+  li {
+    font-size: 22px;
+    padding: 10px;
+  }
+  p.subtitle {
+    font-size: 15px;
+  }
+  p.footer {
+    font-size: 15px;
+  }
+}
