@@ -1,5 +1,5 @@
 'title' => 'ACID.RS'
-'baseurl' => '/acid/'
+'baseurl' => '/'
 'has_assets' => 'true'
 'assets_path' => 'assets'
 'description' => 'A supersonic static-site generator written in Rust.'

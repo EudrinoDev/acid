@@ -13,6 +13,7 @@ use regex::Regex;
 use std::fs::File;
 use std::fs::write;
 use liquid::object;
+use aml::map_to_aml;
 use std::path::Path;
 use git2::Repository;
 use std::fs::read_dir;
@@ -136,9 +137,9 @@ fn read_file(filename: String) -> String {
     return result;
 }
 
-/// Reads a JSON string and returns a [HashMap] from it.
+/// Reads a aml string and returns a [HashMap] from it.
 fn get_aml(subject: String) -> HashMap<String, String> {
-    return aml_serialize(&subject);
+    return aml_serialize(subject);
 }
 
 /// Getting site settings.
@@ -321,7 +322,7 @@ fn scaffold_theme(project_path: String) {
     config_map.insert(String::from("version"), String::from("1.0.0"));
     config_map.insert(String::from("type"), String::from("theme"));
     config_map.insert(String::from("assets_path"), acid_constants()["assets_dir"].clone());
-    let json_string: String = serde_json::to_string_pretty(&config_map).unwrap();
+    let aml_string: String = map_to_aml(config_map);
     let git_ignore_path: String = format!("{}/{}", project_path, acid_constants()["git_ignore_path"].clone());
     let config_path: String = format!("{}/{}", project_path, acid_constants()["config_file_path"].clone());
     let readme_path: String = format!("{}/README.markdown", project_path_clone_three);
@@ -348,7 +349,7 @@ fn scaffold_theme(project_path: String) {
     create_dir(layout_path);
     create_dir(assets_path);
     create_file(config_path);
-    write_to_file(config_path_clone, json_string);
+    write_to_file(config_path_clone, aml_string);
     create_file(readme_path);
     write_to_file(readme_path_clone, readme_contents);
     create_file(git_ignore_path);
@@ -400,7 +401,7 @@ fn scaffold_site(project_path: String) {
     config_map.insert(String::from("theme"), String::from("https://github.com/iamtheblackunicorn/acid-tripping"));
     config_map.insert(String::from("use_remote_theme"), String::from("true"));
     config_map.insert(String::from("type"), String::from("site"));
-    let json_string: String = serde_json::to_string_pretty(&config_map).unwrap();
+    let aml_string: String = map_to_aml(config_map);
     let git_ignore_contents: String = String::from("/.theme\n/build\n.DS_Store");
     let post_contents: String = String::from("---\ntitle:Welcome\nlayout:post\ndescription:A short welcome post.\n---\n\n## Your post\nYour post\'s contents goes here.");
     let index_contents: String = String::from("---\ntitle:My Blog\nlayout:blog\n---");
@@ -410,7 +411,7 @@ fn scaffold_site(project_path: String) {
     create_dir(posts_dir);
     create_dir(pages_dir);
     create_file(config_path);
-    write_to_file(config_path_clone, json_string);
+    write_to_file(config_path_clone, aml_string);
     create_file(git_ignore_path);
     write_to_file(git_ignore_path_clone, git_ignore_contents);
     create_file(index_path);

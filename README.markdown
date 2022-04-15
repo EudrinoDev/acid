@@ -1,5 +1,5 @@
 <p align="center">
- <img width="200px" src="https://github.com/iamtheblackunicorn/acid/raw/main/assets/images/logo/banner.png"/>
+ <img src="https://github.com/iamtheblackunicorn/acid/raw/main/assets/images/logo/banner.png"/>
 </p>
 
 # ACID
