@@ -1,0 +1,46 @@
+on: [push]
+name: Acid CI
+jobs:
+  build_and_test:
+    name: Acid
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: example
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- -b site
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- --new-site some_site
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- --new-theme some_theme
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- --version
+      - uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: -- -v
+      - name: Checking.
+        run: tree site/build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: site/build

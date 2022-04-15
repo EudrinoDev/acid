@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <link rel="stylesheet" href="{{ 'assets/css/styles.css' | prepend: site.baseurl }}"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description }}"/>
+  <meta name="keywords" content="{{ site.keywords }}"/>
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.sixty | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.fifty_seven | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.seventy_two | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.seventy_six | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.one_one_four | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.one_two_zero | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.one_four_four | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.one_five_two | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.one_eight_zero | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.one_nine_two | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.three_two | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ site.nine_six | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.one_six | prepend: site.baseurl }}">
+  <meta name="msapplication-TileImage" content="{{ site.one_four_four | prepend: site.baseurl }}">
+  <title>{{ site.title }}</title>
+ </head>
+
+ <body>
+
+ <div class="heading">
+  <h1>{{ site.title }}</h1>
+ </div>
+
+
+ {% for post in posts %}
+  <div class="content">
+   <h2>{{ post.title }}</h2>
+   <p>{{ post.description }}</p>
+   <p>
+    <a href="{{ post.url }}">{{ site.readMeText }}</a>
+   </p>
+  </div>
+ {% endfor %}
+
+ </body>
+</html>

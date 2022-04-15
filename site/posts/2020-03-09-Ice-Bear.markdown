@@ -1,0 +1,9 @@
+---
+layout:post
+title:Ice Bear - Release Notes v.1.0.0
+description:Notes on the v.1.0.0. release.
+---
+
+## About this release
+
+This release is the first, initial release of **Acid**. The source is available on GitHub [here](https://github.com/iamtheblackunicorn/acid).
