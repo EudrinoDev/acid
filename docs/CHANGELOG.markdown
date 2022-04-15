@@ -19,3 +19,7 @@
 - Performance improvements.
 - Added a command to serve the compiled site.
 - Better error-handling.
+- Rewrite the config file format.
+- Fix Acid's logo.
+- Add icons to the [Acid site](https://blckunicorn.art/acid).
+- Fix [acid-tripping](https://github.com/iamtheblackunicorn/acid-tripping), ***Acid***'s first theme.
