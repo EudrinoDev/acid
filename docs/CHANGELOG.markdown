@@ -16,6 +16,7 @@
 - Fix Acid's logo.
 - Better error-handling.
 - Performance improvements.
+- Cleaner command-line parsing.
 - Rewrite the config file format.
 - Added support for third-party themes.
 - Added a command to serve the compiled site.
