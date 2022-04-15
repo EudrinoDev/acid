@@ -16,9 +16,9 @@ Acid v.1.1.0 # This should be the output.
 - Next let's create a new ***Acid*** site in a directory called `mysite`. To do this, run the following command:
 
   ```bash
-  $ acid --project mysite
+  $ acid --nsite mysite
   # OR
-  $ acid -p mysite
+  $ acid -n mysite
   ```
 
   This should produce a directory called `mysite` with the following file structure:
@@ -53,7 +53,7 @@ Acid v.1.1.0 # This should be the output.
   'use_remote_theme' => 'true'
   title' => 'mysite'
   ```
-  `description` describes what your site is about. `type` tells ***Acid*** that this project is an ***Acid*** site. `title` tells ***Acid*** the title of your site. Finally, the last two fields: `theme` and `use_remote_theme` tell ***Acid** whether this site uses a third-party theme and whether to use this theme. Themes are documented [here](THEMING.markdown). Please note that any variables that are used in the theme's configuration file also have to present in your site's configuration file otherwise ***Acid*** gets confused. You do not have to use a third-party theme, you can also create your own layouts by putting Liquid templates in a directory called `layouts`.
+  `description` describes what your site is about. `type` tells ***Acid*** that this project is an ***Acid*** site. `title` tells ***Acid*** the title of your site. Finally, the last two fields: `theme` and `use_remote_theme` tell ***Acid** whether this site uses a third-party theme and whether to use this theme. Themes are documented [here](THEMING.markdown). Please note that any variables that are used in the theme's configuration file also have to present in your site's configuration file otherwise ***Acid*** gets confused. You do not have to use a third-party theme, you can also create your own layouts by putting Liquid templates in a directory called `layouts`. In fair warning, the scaffolding function will add a bunch of other flags into the mix, so please do not mind those.
   - `index.markdown`: This file generates your blog's main blog page, `index.html`.
   If you open it in your favourite editor, you might see something like this:
   ```markdown

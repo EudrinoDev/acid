@@ -397,10 +397,28 @@ fn scaffold_site(project_path: String) {
     let mut config_map: HashMap<String, String> = HashMap::new();
     config_map.insert(String::from("title"), project_path_clone_seven);
     config_map.insert(String::from("baseurl"), String::from("/"));
-    config_map.insert(String::from("description"), String::from("Your site\'s description goes here."));
+    config_map.insert(String::from("description"), String::from("The description of your site goes here."));
     config_map.insert(String::from("theme"), String::from("https://github.com/iamtheblackunicorn/acid-tripping"));
     config_map.insert(String::from("use_remote_theme"), String::from("true"));
     config_map.insert(String::from("type"), String::from("site"));
+    config_map.insert(String::from("keywords"),String::from("acid cms site blog"));
+    config_map.insert(String::from("profile_pic"),String::from("https://raw.githubusercontent.com/iamtheblackunicorn/acid/main/assets/images/logo/logo.png"));
+    config_map.insert(String::from("57_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-57x57.png"));
+    config_map.insert(String::from("60_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-60x60.png"));
+    config_map.insert(String::from("72_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-72x72.png"));
+    config_map.insert(String::from("76_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-76x76.png"));
+    config_map.insert(String::from("114_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-114x114.png"));
+    config_map.insert(String::from("120_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-120x120.png"));
+    config_map.insert(String::from("144_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-144x144.png"));
+    config_map.insert(String::from("152_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-152x152.png"));
+    config_map.insert(String::from("180_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/apple-icon-180x180.png"));
+    config_map.insert(String::from("192_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/android-icon-192x192.png"));
+    config_map.insert(String::from("32_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/favicon-32x32.png"));
+    config_map.insert(String::from("96_icon"),String::from("https://blckunicorn.art/acid/assets/favicons/favicon-96x96.png"));
+    config_map.insert(String::from("social_media_image_title"),String::from("Acid, a static-site generator."));
+    config_map.insert(String::from("social_media_image"),String::from("https://raw.githubusercontent.com/iamtheblackunicorn/acid/main/assets/images/logo/banner.png"));
+    config_map.insert(String::from("google_analytics_id"),String::from("WHATEVER"));
+    config_map.insert(String::from("viewText"),String::from("READ ME"));
     let aml_string: String = map_to_aml(config_map);
     let git_ignore_contents: String = String::from("/.theme\n/build\n.DS_Store");
     let post_contents: String = String::from("---\ntitle:Welcome\nlayout:post\ndescription:A short welcome post.\n---\n\n## Your post\nYour post\'s contents goes here.");
@@ -501,10 +519,11 @@ fn use_theme(project_path: String) {
         let local_theme_dir_clone_two: String = local_theme_dir_clone_one.clone();
         let local_theme_dir_clone_three: String = local_theme_dir_clone_two.clone();
         let theme_config_path: String = format!("{}/{}", local_theme_dir_clone_three,acid_constants()["config_file_path"].clone());
+        let theme_config_path_clone: String = theme_config_path.clone();
         create_directory(local_theme_dir);
         clone_repo(repo_url, local_theme_dir_clone);
-        let theme_config: HashMap<String,String>= get_site_config(theme_config_path);
-        if theme_config.clone().contains_key("assets_path") && theme_config.clone().contains_key("type") && theme_config["type"].clone() == "theme" {
+        let theme_config: HashMap<String,String> = get_site_config(theme_config_path);
+        if file_is(theme_config_path_clone) && theme_config.clone().contains_key("assets_path") && theme_config.clone().contains_key("type") && theme_config["type"].clone() == "theme" {
             let theme_layouts_path: String = format!("{}/{}", local_theme_dir_clone_one, acid_constants()["layouts_dir"].clone());
             let theme_assets_path: String = format!("{}/{}", local_theme_dir_clone_two, theme_config["assets_path"].clone());
             let theme_layouts_path_target: String = format!("{}", project_path_clone_one);
@@ -513,7 +532,7 @@ fn use_theme(project_path: String) {
             dir_move(theme_assets_path, theme_assets_path_target);
         }
         else {
-            println!("{}", format!("The theme \'{}\' is configured incorrectly.",theme_config["name"].clone()).red().to_string());
+            println!("{}", format!("The theme is configured incorrectly or could not be found.").red().to_string());
         }
     }
     else {}
@@ -755,7 +774,7 @@ fn cli(){
         "true".to_string()
     );
     acid_cli.add_arg(
-        "project".to_string(),
+        "nsite".to_string(),
         "Scaffold a new Acid site.".to_string(),
         "true".to_string()
     );
@@ -782,9 +801,9 @@ fn cli(){
             acid_cli.get_arg_data("theme".to_string())
         );
     }
-    else if acid_cli.arg_was_used("project".to_string()) {
-        scaffold_theme(
-            acid_cli.get_arg_data("project".to_string())
+    else if acid_cli.arg_was_used("nsite".to_string()) {
+        scaffold_site(
+            acid_cli.get_arg_data("nsite".to_string())
         );
     }
     else if acid_cli.version_is() {
