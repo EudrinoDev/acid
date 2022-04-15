@@ -13,13 +13,13 @@
 
 ## Version 1.1.0
 
-- Added site scaffolding and theme scaffolding.
-- Changed the command line flag for cleaning and building an ***Acid*** site.
-- Added support for third-party themes.
-- Performance improvements.
-- Added a command to serve the compiled site.
-- Better error-handling.
-- Rewrite the config file format.
 - Fix Acid's logo.
+- Better error-handling.
+- Performance improvements.
+- Rewrite the config file format.
+- Added support for third-party themes.
+- Added a command to serve the compiled site.
+- Added site scaffolding and theme scaffolding.
 - Add icons to the [Acid site](https://blckunicorn.art/acid).
+- Changed the command line flag for cleaning and building an ***Acid*** site.
 - Fix [acid-tripping](https://github.com/iamtheblackunicorn/acid-tripping), ***Acid***'s first theme.
