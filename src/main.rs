@@ -396,6 +396,8 @@ fn scaffold_site(project_path: String) {
     let pages_dir: String = format!("{}/{}", project_path_clone_six, acid_constants()["pages_dir"].clone());
     let mut config_map: HashMap<String, String> = HashMap::new();
     config_map.insert(String::from("title"), project_path_clone_seven);
+    config_map.insert(String::from("has_assets"), String::from("true"));
+    config_map.insert(String::from("assets_path"), acid_constants()["assets_dir"].clone());
     config_map.insert(String::from("baseurl"), String::from("/"));
     config_map.insert(String::from("description"), String::from("The description of your site goes here."));
     config_map.insert(String::from("theme"), String::from("https://github.com/iamtheblackunicorn/acid-tripping"));
@@ -646,6 +648,8 @@ fn toolchain(project_path: String){
     let project_path_clone_eleven: String = project_path_clone_ten.clone();
     let project_path_clone_twelve: String = project_path_clone_eleven.clone();
     let project_path_clone_thirteen: String = project_path_clone_twelve.clone();
+    let project_path_clone_fourteen: String = project_path_clone_thirteen.clone();
+    let project_path_clone_fifteen: String = project_path_clone_fourteen.clone();
     let config_path: String = format!("{}/{}", project_path_clone_one, acid_constants()["config_file_path"].clone());
     let layouts_path: String = format!("{}/{}", project_path_clone_two, acid_constants()["layouts_dir"].clone());
     let posts_path: String = format!("{}/{}", project_path_clone_three, acid_constants()["posts_dir"].clone());
@@ -675,7 +679,7 @@ fn toolchain(project_path: String){
         else {
             generate_posts_and_index(project_path_clone_eight);
             generate_pages(project_path_clone_nine);
-            copy_assets(project_path_clone_eleven);
+            copy_assets(project_path_clone_fifteen);
         }
         println!("{}", format!("Done.").green().to_string());
     }
@@ -687,11 +691,13 @@ fn toolchain(project_path: String){
             use_theme(project_path_clone_twelve);
             generate_posts_and_index(project_path_clone_five);
             generate_pages(project_path_clone_six);
+            copy_assets(project_path_clone_fourteen);
         }
         else {
             use_theme(project_path_clone_thirteen);
             generate_posts_and_index(project_path_clone_eight);
             generate_pages(project_path_clone_nine);
+            copy_assets(project_path_clone_ten);
         }
         println!("{}", format!("Done.").green().to_string());
     }
