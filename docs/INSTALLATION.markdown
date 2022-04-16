@@ -9,13 +9,13 @@ You will need the following tools installed and available from the command line:
 
 ### Installation
 
-- Install the latest cutting-edge version of ***Acid*** (Recommended.).
+- On Unix-based systems, you can run the command below. This command will install the Rust toolchain and install the latest cutting-edge version of ***Acid***.
 
 ```bash
-$ cargo install --git https://github.com/iamtheblackunicorn/acid.git
+$ url --proto '=https' --tlsv1.2 -sSf https://github.com/iamtheblackunicorn/acid/raw/main/scripts/unix.sh | sh
 ```
 
-- Install the latest stable release directly from [Crates.io](https://crates.io/creates/acid-rs).
+- On Windows systems, you can run the command below. This command will install the Rust toolchain and install the latest cutting-edge version of ***Acid***.
 
 ```bash
 $ cargo install acid-rs
