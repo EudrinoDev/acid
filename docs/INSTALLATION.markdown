@@ -1,6 +1,6 @@
 # INSTALLATION
 
-### Installation
+## Installation
 
 - On Unix-based systems, you can run the command below. This command will install the Rust toolchain and install the latest cutting-edge version of ***Acid***.
 
