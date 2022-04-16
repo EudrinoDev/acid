@@ -18,5 +18,5 @@ curl --tlsv1.2 -sSf https://raw.githubusercontent.com/iamtheblackunicorn/acid/ma
 - On Windows systems, you can run the command below. This command will install the Rust toolchain and install the latest cutting-edge version of ***Acid***.
 
 ```bash
-$ cargo install acid-rs
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/iamtheblackunicorn/acid/main/scripts/windows.ps1 -OutFile ./windows.ps1; ./windows.ps1
 ```
