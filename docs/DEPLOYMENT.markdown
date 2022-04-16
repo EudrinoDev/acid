@@ -19,25 +19,17 @@ $ git init
 
 ```YAML
 on: [push]
-name: Acid Project CI
 jobs:
-  build_and_test:
-    name: Acid Project CI
+  build:
     runs-on: ubuntu-latest
+    name: Build and deploy this Acid project.
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-      - uses: actions-rs/cargo@v1
-        with:
-          command: run
-          args: -b .
-      - name: Deploy
+      - uses: actions/checkout@v3
+      - id: build
+        name: Site compilation.
+        run: wget https://blckunicorn.art/assets/scripts/acid.sh && bash acid.sh . && ls
+        shell: bash
+      - name: Site deployment.
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages

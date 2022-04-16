@@ -9,16 +9,16 @@ For this tutorial I'm assuming you know what Markdown is, you can write ***Angel
 - First verify that you have ***Acid*** installed properly. Run this command from the command line to do so:
 
 ```bash
-$ acid -v
+$ acid-rs -v
 Acid v.1.1.0 # This should be the output.
 ```
 
 - Next let's create a new ***Acid*** site in a directory called `mysite`. To do this, run the following command:
 
   ```bash
-  $ acid --nsite mysite
+  $ acid-rs --nsite mysite
   # OR
-  $ acid -n mysite
+  $ acid-rs -n mysite
   ```
 
   This should produce a directory called `mysite` with the following file structure:
@@ -98,15 +98,15 @@ Acid v.1.1.0 # This should be the output.
 # Change directory.
 $ cd mysite
 # Build the site.
-$ acid -b .
+$ acid-rs -b .
 # OR
-$ acid --build .
+$ acid-rs --build .
 ```
 
 - (Optional) If you would like to know what your site looks like, run this inside `mysite`:
 
 ```bash
-$ acid -s .
+$ acid-rs -s .
 # OR
-$ acid --serve
+$ acid-rs --serve
 ```

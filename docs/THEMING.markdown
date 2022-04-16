@@ -9,16 +9,16 @@ For this tutorial I'm assuming you know what Liquid Templating is, you can write
 - First verify that you have ***Acid*** installed properly. Run this command from the command line to do so:
 
 ```bash
-$ acid -v
+$ acid-rs -v
 Acid v.1.1.0 # This should be the output.
 ```
 
 - Next let's create a new ***Acid*** theme in a directory called `mytheme`. To do this, run the following command:
 
   ```bash
-  $ acid --theme mytheme
+  $ acid-rs --theme mytheme
   # OR
-  $ acid --t mytheme
+  $ acid-rs -t mytheme
   ```
 
   This should produce a directory called `mytheme` with the following file structure:
