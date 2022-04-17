@@ -24,8 +24,7 @@
 
 - ***Acid***'s page on [Crates.io](https://crates.io): [View](https://crates.io/crates/acid-rs).
 - A live, deployed Acid project: [View](https://blckunicorn.art/acid).
-- A quick getting-started guide on my mixed blog: [Read](https://angeldustduke.art/2022/03/18/How-to-write-a-blog-in-Rust.html).
-- The same guide on Hashnode (Likes, Follows, and comments are always appreciated.): [Read](https://angeldustduke.hashnode.dev/how-to-create-a-supersonic-blog-in-a-flash).
+- Acid's theme registry, also an Acid site: [View](blckunicorn.art/acid-themes/).
 
 ## NOTE
 
