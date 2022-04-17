@@ -11,7 +11,13 @@ documentation = "https://github.com/iamtheblackunicorn/acid"
 readme = "README.markdown"
 keywords = ["static", "site", "generator"]
 categories = ["command-line-utilities"]
-exclude = ["/.github", "site", "assets", "docs"]
+exclude = [  
+  "site",
+  "docs", 
+  "assets", 
+  "scripts"
+  "/.github", 
+]
 
 
 [dependencies]
