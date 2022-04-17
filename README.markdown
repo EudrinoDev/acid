@@ -23,8 +23,8 @@
 ## LINKS
 
 - ***Acid***'s page on [Crates.io](https://crates.io): [View](https://crates.io/crates/acid-rs).
-- A live, deployed Acid project: [View](https://blckunicorn.art/acid).
-- Acid's theme registry, also an Acid site: [View](blckunicorn.art/acid-themes/).
+- A live, deployed ***Acid*** project: [View](https://blckunicorn.art/acid).
+- ***Acid***'s theme registry, also an ***Acid*** site: [View](blckunicorn.art/acid-themes/).
 
 ## NOTE
 
