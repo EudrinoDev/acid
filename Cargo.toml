@@ -9,14 +9,20 @@ homepage = "https://github.com/iamtheblackunicorn/acid"
 repository = "https://github.com/iamtheblackunicorn/acid"
 documentation = "https://github.com/iamtheblackunicorn/acid"
 readme = "README.markdown"
-keywords = ["static", "site", "generator"]
-categories = ["command-line-utilities"]
+keywords = [
+  "site",
+  "static",
+  "generator"
+]
+categories = [
+  "command-line-utilities"
+]
 exclude = [  
   "site",
   "docs", 
   "assets", 
-  "scripts"
-  "/.github", 
+  "scripts",
+  "/.github"
 ]
 
 
