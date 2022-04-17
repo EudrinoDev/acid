@@ -13,7 +13,6 @@ use regex::Regex;
 use std::fs::File;
 use std::fs::write;
 use liquid::object;
-use aml::map_to_aml;
 use std::path::Path;
 use git2::Repository;
 use std::fs::read_dir;
@@ -31,12 +30,13 @@ use liquid::ParserBuilder;
 use fs_extra::dir::move_dir;
 use std::fs::read_to_string;
 use std::fs::remove_dir_all;
+use angelmarkup::map_to_aml;
 use std::collections::HashMap;
 use fs_extra::file::move_file;
 use chrono::offset::LocalResult;
 use fs_extra::file::CopyOptions;
 use extract_frontmatter::Extractor;
-use aml::serialize as aml_serialize;
+use angelmarkup::serialize as aml_serialize;
 
 /// Clones a GitHub repository from "repo" into "target_dir".
 fn clone_repo(repo: String, target_dir: String) -> bool {
