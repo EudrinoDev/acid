@@ -17,23 +17,29 @@ jobs:
         with:
           command: run
           args: example
-      - uses: actions-rs/cargo@v1
+          
+      - name: Compile the Acid site.
+        uses: actions-rs/cargo@v1
         with:
           command: run
           args: -- -b site
-      - uses: actions-rs/cargo@v1
+      - name: Scaffold a new Acid site.
+        uses: actions-rs/cargo@v1
         with:
           command: run
-          args: -- --new-site some_site
-      - uses: actions-rs/cargo@v1
+          args: -- -n some_site
+      - name: Scaffold a new Acid theme.
+        uses: actions-rs/cargo@v1
         with:
           command: run
-          args: -- --new-theme some_theme
-      - uses: actions-rs/cargo@v1
+          args: -- -t some_theme
+      - name: Get Acid version info.
+        uses: actions-rs/cargo@v1
         with:
           command: run
-          args: -- --version
-      - uses: actions-rs/cargo@v1
+          args: -- -h
+      - name: Get Acid version info.
+        uses: actions-rs/cargo@v1
         with:
           command: run
           args: -- -v
