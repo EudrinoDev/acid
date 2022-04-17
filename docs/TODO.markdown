@@ -18,3 +18,4 @@ The ***"Roadmap"*** entails non-code-related action still to be taken for ***Aci
 - ***NEW FEATURE***: Add a struct for handling site navigation links.
 - ***KNOWN ISSUE***: Fix allowing number variables in Liquid templates.
 - ***KNOWN ISSUE***: Fix serilaization of Markdown to allow for remote URLs.
+- ***KNOWN ISSUE***: Fix the Markdown and Liquid converter method to accept any struct.
