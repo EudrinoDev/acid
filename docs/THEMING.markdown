@@ -8,10 +8,11 @@ For this tutorial I'm assuming you know what Liquid Templating is, you can write
 
 - First verify that you have ***Acid*** installed properly. Run this command from the command line to do so:
 
-```bash
-$ acid-rs -v
-Acid v.1.1.0 # This should be the output.
-```
+  ```bash
+  $ acid-rs -v
+  Acid v.1.1.0
+  by Alexander Abraham. # This should be the output.
+  ```
 
 - Next let's create a new ***Acid*** theme in a directory called `mytheme`. To do this, run the following command:
 
@@ -108,3 +109,4 @@ Acid v.1.1.0 # This should be the output.
   'use_remote_theme' => 'true'
   ```
 - If you'd like to have an example theme to work with or have a look at, have a look at ***[Acid Tripping](https://github.com/iamtheblackunicorn/acid-tripping)***.
+- If you'd like to submit your theme to ***Acid's*** official theme platform, check out [this repository](https://github.com/iamtheblackunicorn/acid-themes).

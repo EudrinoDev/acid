@@ -11,20 +11,20 @@ You will need the following tools installed and available from the command line:
 
 - 1.) Get the source code:
 
-```bash
-$ git clone https://github.com/iamtheblackunicorn/acid.git
-```
+  ```bash
+  $ git clone https://github.com/iamtheblackunicorn/acid.git
+  ```
 
 - 2.) Change directory:
 
-```bash
-$ cd acid
-```
+  ```bash
+  $ cd acid
+  ```
 
 - 3.) Build the source code:
 
-```bash
-$ cargo build --release
-```
+  ```bash
+  $ cargo build --release
+  ```
 
 This will produce an executable binary here: `target/release`.

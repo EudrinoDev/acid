@@ -17,24 +17,24 @@ $ git init
 
 - Create a file called `rust.yml` at this path in your project directory: `.github/workflows`. Once this is done, fill it with the following code:
 
-```YAML
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Build and deploy this Acid project.
-    steps:
-      - uses: actions/checkout@v3
-      - id: build
-        name: Site compilation.
-        run: wget https://blckunicorn.art/assets/scripts/acid.sh && bash acid.sh . && ls
-        shell: bash
-      - name: Site deployment.
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
-        with:
-          branch: gh-pages
-          folder: build
-```
+  ```YAML
+  on: [push]
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      name: Build and deploy this Acid project.
+      steps:
+        - uses: actions/checkout@v3
+        - id: build
+          name: Site compilation.
+          run: wget https://blckunicorn.art/assets/scripts/acid.sh && bash acid.sh . && ls
+          shell: bash
+        - name: Site deployment.
+          uses: JamesIves/github-pages-deploy-action@v4.2.5
+          with:
+            branch: gh-pages
+            folder: build
+  ```
 
 - Once this is completed, head over to GitHub and create a new public, empty repository.
 
@@ -42,16 +42,16 @@ jobs:
 
 - Once you have your token, run this command in the project directory (`YOURTOKEN` represents your personal access token, `yourusername` represents your GitHub username, and `your_repository` represents the name of your repository.):
 
-```bash
-git remote add origin https://YOURTOKEN@github.com/yourusername/your_repository
-```
+  ```bash
+  git remote add origin https://YOURTOKEN@github.com/yourusername/your_repository
+  ```
 
 - Commit your changes with the following commands:
 
-```bash
-$ git add -A
-$ git commit -m "My shiny new Acid website."
-```
+  ```bash
+  $ git add -A
+  $ git commit -m "My shiny new Acid website."
+  ```
 
 - Wait for the GitHub action to complete.
 - Finally, head over to the "Pages" section of your repository's settings and choose "gh-pages" as the source for your repository's website.

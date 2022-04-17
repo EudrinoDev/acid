@@ -7,9 +7,9 @@ The ***"Roadmap"*** entails non-code-related action still to be taken for ***Aci
 
 ## Roadmap
 
-- ***NOISE***: Post about ***Acid*** to Twitter.
-- ***NOISE***: Post about ***Acid*** to Hashnode.
-- ***NOISE***: Post about ***Acid*** to HackerNews.
+- ***NOISE***: Post about ***Acid*** on Twitter.
+- ***NOISE***: Post about ***Acid*** on Hashnode.
+- ***NOISE***: Post about ***Acid*** on HackerNews.
 
 ## List of new features for v.1.2.0
 
