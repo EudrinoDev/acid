@@ -25,13 +25,16 @@
 
  <body>
 
- <div class="heading">
-  <h1>{{ site.title }}</h1>
- </div>
+   <img class="avatar" src="{{ site.pic_url }}"/>
+   <h1>{{ site.title }}</h1>
+   <p class="subtitle">{{ site.description }}</p>
+   <br/>
+
   <div class="content">
-   <h2>{{ page.title }}</h2>
    {{ page.content }}
   </div>
+
+  <br/>
 
  </body>
 </html>

@@ -5,6 +5,7 @@
 'description' => 'A supersonic static-site generator written in Rust.'
 'type' => 'site'
 'readMeText' => 'READ ME'
+'pic_url' => 'https://github.com/iamtheblackunicorn/acid/raw/main/assets/images/logo/logo.png'
 'keywords' => 'acid static-site-generator'
 'fifty_seven' =>  'assets/favicons/apple-icon-57x57.png'
 'sixty' =>  'assets/favicons/apple-icon-60x60.png'
