@@ -28,5 +28,5 @@
 
 ## NOTE
 
-- *Acid* by Alexander Abraham :black_heart: a.k.a. *"The Black Unicorn" :unicorn:*
+- *Acid* by Alexander Abraham a.k.a. *"The Black Unicorn"*
 - Licensed under the MIT license.
