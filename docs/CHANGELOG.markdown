@@ -26,3 +26,9 @@
 - Add icons to the [Acid site](https://blckunicorn.art/acid).
 - Changed the command line flag for cleaning and building an ***Acid*** site.
 - Fix [acid-tripping](https://github.com/iamtheblackunicorn/acid-tripping), ***Acid***'s first theme.
+
+## Version 1.1.1
+
+- Upload to [Crates.io](https://crates.io).
+- Updated the Acid website.
+- Documentation fixes.
