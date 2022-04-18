@@ -67,7 +67,7 @@ fn acid_constants() -> HashMap<String, String> {
     constants.insert(String::from("blog_layout"),String::from("blog.html"));
     constants.insert(String::from("page_layout"),String::from("page.html"));
     constants.insert(String::from("post_layout"),String::from("post.html"));
-    constants.insert(String::from("version"),String::from("1.1.0"));
+    constants.insert(String::from("version"),String::from("1.1.1"));
     constants.insert(String::from("name"),String::from("Acid"));
     constants.insert(String::from("author"),String::from("Alexander Abraham"));
     return constants;
