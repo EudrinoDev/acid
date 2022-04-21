@@ -38,6 +38,92 @@ use fs_extra::file::CopyOptions;
 use extract_frontmatter::Extractor;
 use angelmarkup::serialize as aml_serialize;
 
+/// Tries to convert a string to an integer.
+/// Returns a boolean depending on whether the
+/// operation succeeded.
+fn can_convert_string_to_num(num: String) -> bool {
+    let mut result: bool = false;
+    let parse_op = num.parse::<usize>();
+    match parse_op {
+        Ok(_x) => {
+            result = true;
+        },
+        Err(_e) => {}
+    };
+    return result;
+}
+
+/// Converts a string to an integer.
+fn convert_string_to_num(num: String) -> usize {
+    let num_clone_one: String = num.clone();
+    let num_clone_two: String = num_clone_one.clone();
+    let mut result: usize = 0;
+    if can_convert_string_to_num(num_clone_one.to_string()) == true {
+        result = num_clone_two.to_string().parse::<usize>().unwrap();
+    }
+    else {}
+    return result;
+}
+
+/// Sorts a vector of numbers which are strings.
+fn sort_numbers(nums: Vec<String>) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    let mut usize_vec: Vec<usize> = Vec::new();
+    for item in nums {
+        let usize_num: usize = convert_string_to_num(item);
+        usize_vec.push(usize_num);
+    }
+    usize_vec.sort();
+    for num in usize_vec {
+        result.push(num.to_string());
+    }
+    return result;
+}
+
+/// Sorts a bunch of dates in the format: "YYYY-MM-DD".
+fn sort_dates(subject: Vec<String>) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    let mut year_vector: Vec<String> = Vec::new();
+    let mut month_vector: Vec<String> = Vec::new();
+    let mut day_vector: Vec<String> = Vec::new();
+    for date in subject {
+        let date_vec = clean_split(date, String::from("-"));
+        let year: String = date_vec[0].clone();
+        let month: String = date_vec[1].clone();
+        let day: String = date_vec[2].clone();
+        year_vector.push(year);
+        month_vector.push(month);
+        day_vector.push(day);
+    }
+    let sorted_year_vec: Vec<String> = sort_numbers(year_vector);
+    let sorted_month_vec: Vec<String> = sort_numbers(month_vector);
+    let sorted_day_vec: Vec<String> = sort_numbers(day_vector);
+
+    let sorted_year_vec_clone_one: Vec<String> = sorted_year_vec.clone();
+    let sorted_year_vec_clone_two: Vec<String> = sorted_year_vec_clone_one.clone();
+    for year in sorted_year_vec_clone_one {
+        let year_clone_one = year.clone();
+        let year_clone_two = year_clone_one.clone();
+        let index = sorted_year_vec_clone_two.iter().position(|r| r == &year_clone_one).unwrap();
+        let month: String = sorted_month_vec[index].clone();
+        let day: String = sorted_day_vec[index].clone();
+        let new_date: String = format!("{}-{}-{}", year_clone_two, month, day);
+        result.push(new_date);
+    }
+    return result;
+}
+
+/// Sorts blog titles.
+fn sort_blog_posts(subject: Vec<String>) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    for post in subject {
+        let comp_vec: Vec<String> = clean_split(post, String::from("-"));
+        let ymd: String = format!("{}-{}-{}", comp_vec[0].clone(), comp_vec[1].clone(), comp_vec[2].clone());
+        let everything_else = format!("")
+    }
+    return result;
+}
+
 /// Clones a GitHub repository from "repo" into "target_dir".
 fn clone_repo(repo: String, target_dir: String) -> bool {
     let mut result: Vec<bool> = Vec::new();
@@ -836,5 +922,10 @@ fn cli(){
 /// The main entry point for
 /// the Rust compiler.
 fn main(){
-    cli();
+    let mut test_vector: Vec<String> = Vec::new();
+    test_vector.push(String::from("2019-04-01-Hello-World-Part-I.markdown"));
+    test_vector.push(String::from("2017-05-02-Hello-World-Part-II.markdown"));
+    test_vector.push(String::from("2018-12-11-Hello-World-Part-III.markdown"));
+    sort_blog_posts(test_vector);
+    //cli();
 }
