@@ -919,10 +919,10 @@ fn cli(){
 /// The main entry point for
 /// the Rust compiler.
 fn main(){
-    let mut test_vector: Vec<String> = Vec::new();
-    test_vector.push(String::from("2019-04-01-Hello-World-Part-I.markdown"));
-    test_vector.push(String::from("2017-05-02-Hello-World-Part-II.markdown"));
-    test_vector.push(String::from("2018-12-11-Hello-World-Part-III.markdown"));
-    sort_blog_posts(test_vector);
-    //cli();
+    //let mut test_vector: Vec<String> = Vec::new();
+    //test_vector.push(String::from("2019-04-01-Hello-World-Part-I.markdown"));
+    //test_vector.push(String::from("2017-05-02-Hello-World-Part-II.markdown"));
+    //test_vector.push(String::from("2018-12-11-Hello-World-Part-III.markdown"));
+    //sort_blog_posts(test_vector);
+    cli();
 }
