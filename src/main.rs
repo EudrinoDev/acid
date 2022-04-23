@@ -120,7 +120,7 @@ fn sort_blog_posts(subject: Vec<String>) -> Vec<String> {
     for post in subject {
         let comp_vec: Vec<String> = clean_split(post, String::from("-"));
         let ymd: String = format!("{}-{}-{}", comp_vec[0].clone(), comp_vec[1].clone(), comp_vec[2].clone());
-        let everything_else = format!("")
+        let everything_else = format!("");
     }
     return result;
 }
