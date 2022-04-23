@@ -36,7 +36,6 @@ use fs_extra::file::move_file;
 use chrono::offset::LocalResult;
 use fs_extra::file::CopyOptions;
 use extract_frontmatter::Extractor;
-use extract_frontmatter::config::Splitter;
 use angelmarkup::serialize as aml_serialize;
 
 /// Tries to convert a string to an integer.
@@ -238,13 +237,17 @@ fn get_site_config(config_path: String) -> HashMap<String, String> {
 /// Serializes Markdown content saved in "md_string" into a [HashMap].
 fn serialize_front_matter(md_string: String) -> HashMap<String,String> {
     let mut result: HashMap<String, String> = HashMap::new();
-    let (im_output, content) = Extractor::new(Splitter::EnclosingLines("---")).extract(&md_string);
-    let cleaned_front_matter_vector: Vec<String> = clean_split(im_output.into_owned(), String::from("\n"));
+    let mut extractor = Extractor::new(&md_string);
+    extractor.select_by_terminator("---");
+    let im_output: String = extractor.extract();
+    let mut cleaned_front_matter_vector: Vec<String> = clean_split(im_output, String::from("\n"));
+    cleaned_front_matter_vector.remove(0);
     for item in cleaned_front_matter_vector.clone() {
         let split_items = clean_split(item, String::from(":"));
         result.insert(String::from(split_items[0].clone()),String::from(split_items[1].clone()));
     }
-    result.insert(String::from("content"), markdown::to_html(&content.trim().to_owned()));
+    let content: &str = extractor.remove().trim();
+    result.insert(String::from("content"), markdown::to_html(&content.to_owned()));
     return result;
 }
 
