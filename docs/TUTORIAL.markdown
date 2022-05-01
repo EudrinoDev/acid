@@ -2,7 +2,7 @@
 
 ## Requirements
 
-For this tutorial I'm assuming you know what Markdown is, you can write ***Angel Markup*** without any problems, and you have the latest cutting-edge version of ***Acid*** installed (From GitHub.).
+For this tutorial I'm assuming you know what Markdown is, you can write ***Angel Markup*** without any problems, and you have the latest cutting-edge version of ***Acid*** installed (From GitHub.). If not, check out the installation instructions [here](INSTALLATIOn.markdown).
 
 ## Steps
 
