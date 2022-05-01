@@ -25,12 +25,12 @@ use std::process::exit;
 use liquid::ObjectView;
 use std::fs::create_dir;
 use fs_extra::dir::copy;
+use angelmarkup::to_aml;
 use serde_json::from_str;
 use liquid::ParserBuilder;
 use fs_extra::dir::move_dir;
 use std::fs::read_to_string;
 use std::fs::remove_dir_all;
-use angelmarkup::map_to_aml;
 use std::collections::HashMap;
 use fs_extra::file::move_file;
 use chrono::offset::LocalResult;
@@ -225,7 +225,18 @@ fn read_file(filename: String) -> String {
 
 /// Reads a aml string and returns a [HashMap] from it.
 fn get_aml(subject: String) -> HashMap<String, String> {
-    return aml_serialize(subject);
+    let mut result: HashMap<String, String> = HashMap::new();
+    let match_op = aml_serialize(subject);
+    match match_op {
+        Ok(_x) => {
+            result = _x;
+        },
+        Err(_e) => {
+            let msg: String = format!("{}", _e).red().to_string();
+            println!("{}", msg);
+        }
+    };
+    return result;
 }
 
 /// Getting site settings.
@@ -408,7 +419,7 @@ fn scaffold_theme(project_path: String) {
     config_map.insert(String::from("version"), String::from("1.0.0"));
     config_map.insert(String::from("type"), String::from("theme"));
     config_map.insert(String::from("assets_path"), acid_constants()["assets_dir"].clone());
-    let aml_string: String = map_to_aml(config_map);
+    let aml_string: String = to_aml(config_map);
     let git_ignore_path: String = format!("{}/{}", project_path, acid_constants()["git_ignore_path"].clone());
     let config_path: String = format!("{}/{}", project_path, acid_constants()["config_file_path"].clone());
     let readme_path: String = format!("{}/README.markdown", project_path_clone_three);
@@ -507,7 +518,7 @@ fn scaffold_site(project_path: String) {
     config_map.insert(String::from("social_media_image"),String::from("https://raw.githubusercontent.com/iamtheblackunicorn/acid/main/assets/images/logo/banner.png"));
     config_map.insert(String::from("google_analytics_id"),String::from("WHATEVER"));
     config_map.insert(String::from("viewText"),String::from("READ ME"));
-    let aml_string: String = map_to_aml(config_map);
+    let aml_string: String = to_aml(config_map);
     let git_ignore_contents: String = String::from("/.theme\n/build\n.DS_Store");
     let post_contents: String = String::from("---\ntitle:Welcome\nlayout:post\ndescription:A short welcome post.\n---\n\n## Your post\nYour post\'s contents goes here.");
     let index_contents: String = String::from("---\ntitle:My Blog\nlayout:blog\n---");

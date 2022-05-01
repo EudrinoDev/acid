@@ -17,10 +17,10 @@ keywords = [
 categories = [
   "command-line-utilities"
 ]
-exclude = [  
+exclude = [
   "site",
-  "docs", 
-  "assets", 
+  "docs",
+  "assets",
   "scripts",
   "/.github"
 ]
@@ -35,7 +35,7 @@ chrono = "0.4.19"
 fs_extra = "1.2.0"
 markdown = "0.3.0"
 file-serve = "0.1.1"
-angelmarkup = "1.0.0"
+angelmarkup = "1.1.0"
 serde_json = "1.0.79"
 extract-frontmatter = "2.1.0"
 cleasy = "1.0.0"
