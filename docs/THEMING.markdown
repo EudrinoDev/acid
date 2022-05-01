@@ -10,7 +10,7 @@ For this tutorial I'm assuming you know what Liquid Templating is, you can write
 
   ```bash
   $ acid-rs -v
-  Acid v.1.1.0
+  Acid v.1.1.1
   by Alexander Abraham. # This should be the output.
   ```
 
@@ -44,7 +44,7 @@ For this tutorial I'm assuming you know what Liquid Templating is, you can write
 
   Describe your theme here.
   ```
-  If you're uploading your theme to GitHub, this is the first page that people will see for your ***Acid*** theme's repository. Make this pretty. ;) ***Acid*** only accepts themes hosted on GitHub, so you *will* have to upload it on to GitHub.
+  If you're uploading your theme to GitHub, this is the first page that people will see for your ***Acid*** theme's repository. Make this pretty. ;) ***Acid*** only accepts themes hosted on GitHub, so you *will* have to upload your theme to GitHub.
   - `config.aml`: This file is central to the whole project. Without it, ***Acid*** will not run.
   If you open `config.aml` in your favourite editor, you might see something like this:
   ```text
@@ -53,7 +53,7 @@ For this tutorial I'm assuming you know what Liquid Templating is, you can write
   'version' => '1.0.0'
   'assets_path' => 'assets'
   ```
-  `name` is the name of the theme and helps with organizing different things. `type` indicates to ***Acid*** that this is a theme that we are dealing with here and not a site. `version` is for versioning different releases of your theme. `assets_path` indicates to ***Acid*** where this theme's static assets like CSS and Javascript can be found.
+  `name` is the name of the theme and helps with organizing different things. `type` indicates to ***Acid*** that this is a theme. `version` is for versioning different releases of your theme. `assets_path` indicates to ***Acid*** where this theme's static assets like CSS and Javascript can be found.
   - `assets/styles.css`: This stylesheet could be used in your templates for styling your page.
   - `layouts/blog.html`: A layout for listing all your blog posts could look something like this:
   ```Liquid

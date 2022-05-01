@@ -22,7 +22,7 @@
 - Added support for third-party themes.
 - Added a command to serve the compiled site.
 - Added site scaffolding and theme scaffolding.
-- Stream-lined installtion methods for all platforms.
+- Stream-lined installation methods for all platforms.
 - Add icons to the [Acid site](https://blckunicorn.art/acid).
 - Changed the command line flag for cleaning and building an ***Acid*** site.
 - Fix [acid-tripping](https://github.com/iamtheblackunicorn/acid-tripping), ***Acid***'s first theme.

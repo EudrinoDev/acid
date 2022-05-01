@@ -10,7 +10,7 @@ For this tutorial I'm assuming you know what Markdown is, you can write ***Angel
 
   ```bash
   $ acid-rs -v
-  Acid v.1.1.0 # This should be the output.
+  Acid v.1.1.1 # This should be the output.
   ```
 
 - Next let's create a new ***Acid*** site in a directory called `mysite`. To do this, run the following command:

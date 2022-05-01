@@ -46,11 +46,13 @@ $ git init
   git remote add origin https://YOURTOKEN@github.com/yourusername/your_repository
   ```
 
-- Commit your changes with the following commands:
+- Commit and push your changes with the following commands:
 
   ```bash
+  $ git branch -M main
   $ git add -A
   $ git commit -m "My shiny new Acid website."
+  $ git push -u origin main
   ```
 
 - Wait for the GitHub action to complete.
@@ -59,4 +61,4 @@ $ git init
 
 ## Note
 
-If you created your GitHub repository with the name `yourusername.github.io`, where `yourusername`represents your GitHub username, you have to set your project's `baseurl` field to `/`. If you created your repository at `some_repo`, where `some_repo` represents some repository of yours, then set your project's `baseurl` field to `/some_repo/`.
+If you created your GitHub repository with the name `yourusername.github.io`, where `yourusername`represents your GitHub username, you have to set your project's `baseurl` field to `/`. If you created your repository at `some_repo`, where `some_repo` represents the repository containing your ***Acid*** site, then set your project's `baseurl` field to `/some_repo/`.
