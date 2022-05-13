@@ -28,6 +28,7 @@ exclude = [
 [dependencies]
 git2 = "0.14.2"
 regex = "1.5.5"
+cleasy = "1.0.0"
 liquid = "0.24.0"
 kstring = "1.0.6"
 colored = "2.0.0"
@@ -38,4 +39,4 @@ file-serve = "0.1.1"
 angelmarkup = "1.1.0"
 serde_json = "1.0.79"
 extract-frontmatter = "2.1.0"
-cleasy = "1.0.0"
+ferrimoji = { git = "https://github.com/iamtheblackunicorn/ferrimoji" }
